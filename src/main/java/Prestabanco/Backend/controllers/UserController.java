@@ -37,6 +37,17 @@ public class UserController {
         return ResponseEntity.ok(userNew);
     }
 
+    @PutMapping("/")
+    public ResponseEntity<UserEntity> updateUser(@RequestBody UserEntity user){
+        UserEntity userUpdated = userService.updateUser(user);
+        return ResponseEntity.ok(userUpdated);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deleteUserById(@PathVariable Long id) throws Exception {
+        var isDeleted = userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
 
 
 }
