@@ -20,8 +20,8 @@ public class HLSimulationController {
     HLSimulationService hLSimulationService;
 
 
-    @GetMapping("/rut/{rut}")
-    public ResponseEntity<List<HLSimulationEntity>> listHLSimulations(@PathVariable String rut) {
+    @GetMapping("/")
+    public ResponseEntity<List<HLSimulationEntity>> listHLSimulations(@RequestParam ("rut") String rut) {
         List<HLSimulationEntity> hlsimulations = hLSimulationService.getHLSimulations(rut);
         return ResponseEntity.ok(hlsimulations);
     }

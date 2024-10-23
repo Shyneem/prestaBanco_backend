@@ -1,30 +1,25 @@
 package Prestabanco.Backend.entities;
-
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Entity
-@Table(name = "users")
+@Table(name = "files")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-
-public class UserEntity {
-
+public class FileUploadEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
     private Long id;
 
     private String rut;
-    private String name;
-    private String lastname;
-    private String password;
-    private int type;
 
+    @Column(name = "file_name")
+    private String fileName;
 
+    @Column(name = "file_path")
+    private String filePath;
 }
