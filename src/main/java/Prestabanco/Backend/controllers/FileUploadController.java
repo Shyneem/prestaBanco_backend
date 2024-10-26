@@ -15,7 +15,6 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("api/v1/upload")
-
 public class FileUploadController {
 
     private FileUploadService fileUploadService;

@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/hlsimulations")
-@CrossOrigin("*")
 public class HLSimulationController {
     @Autowired
     HLSimulationService hLSimulationService;

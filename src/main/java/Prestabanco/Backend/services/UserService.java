@@ -1,6 +1,8 @@
 package Prestabanco.Backend.services;
 
 
+import Prestabanco.Backend.controllers.dtos.LoginRequest;
+import Prestabanco.Backend.controllers.dtos.UserResponse;
 import Prestabanco.Backend.entities.UserEntity;
 import Prestabanco.Backend.repositories.UserRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -14,12 +16,26 @@ import java.util.ArrayList;
 public class UserService {
     @Autowired
     UserRepository userRepository;
+    UserEntity user;
 
 
 
 
     public ArrayList<UserEntity> getUsers() { return (ArrayList<UserEntity>) userRepository.findAll();
     }
+
+    /*
+    public UserResponse authenticate(LoginRequest loginRequest) {
+        UserResponse userResponse = new UserResponse();
+        if (loginRequest.getRut().equals(user.getRut()) && loginRequest.getPassword().equals(user.getPassword())) {
+            userResponse.setId(user.getId());
+            userResponse.setRut(loginRequest.getRut());
+
+        }
+        return userResponse;
+    }
+
+     */
 
     public UserEntity saveUser(UserEntity user){
         return userRepository.save(user);
