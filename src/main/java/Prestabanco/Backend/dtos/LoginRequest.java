@@ -1,4 +1,4 @@
-package Prestabanco.Backend.controllers.dtos;
+package Prestabanco.Backend.dtos;
 
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;

@@ -20,6 +20,7 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private Long id;
 
+    @Column(unique=true, nullable = false )
     private String rut;
     private String name;
     private String lastname;

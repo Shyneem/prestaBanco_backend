@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/hlsimulations")
+@RequestMapping("/api/v1/simulations")
 public class HLSimulationController {
     @Autowired
     HLSimulationService hLSimulationService;

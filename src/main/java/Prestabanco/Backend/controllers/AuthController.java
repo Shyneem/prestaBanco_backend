@@ -1,7 +1,7 @@
 package Prestabanco.Backend.controllers;
 
 
-import Prestabanco.Backend.controllers.dtos.LoginRequest;
+import Prestabanco.Backend.dtos.LoginRequest;
 import Prestabanco.Backend.services.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

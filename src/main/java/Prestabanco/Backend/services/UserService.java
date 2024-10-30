@@ -1,12 +1,8 @@
 package Prestabanco.Backend.services;
 
 
-import Prestabanco.Backend.controllers.dtos.LoginRequest;
-import Prestabanco.Backend.controllers.dtos.UserResponse;
 import Prestabanco.Backend.entities.UserEntity;
 import Prestabanco.Backend.repositories.UserRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

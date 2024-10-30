@@ -1,9 +1,9 @@
 package Prestabanco.Backend.entities;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Entity
 @Table(name = "files")
@@ -22,4 +22,8 @@ public class FileUploadEntity {
 
     @Column(name = "file_path")
     private String filePath;
+
+    @ManyToOne
+    @JoinColumn(name = "loan_request_id", nullable = false)
+    private LoanRequestEntity loanRequest;
 }

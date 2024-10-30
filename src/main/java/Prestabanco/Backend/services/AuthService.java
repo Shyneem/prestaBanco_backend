@@ -1,6 +1,5 @@
 package Prestabanco.Backend.services;
 
-import Prestabanco.Backend.controllers.dtos.UserResponse;
 import Prestabanco.Backend.entities.UserEntity;
 import Prestabanco.Backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
