@@ -15,9 +15,9 @@ public class FileUploadService {
     @Autowired
     FileUploadRepository fileUploadRepository;
 
-    public ArrayList<FileUploadEntity> findAllByRut(String rut) {return fileUploadRepository.findAllByRut(rut);}
 
-    public FileUploadEntity saveFileUpload(FileUploadEntity file){return fileUploadRepository.save(file);}
+    public FileUploadEntity saveFileUpload(FileUploadEntity file){
+        return fileUploadRepository.save(file);}
 
     public FileUploadEntity updateUser(FileUploadEntity file) {
         return fileUploadRepository.save(file);

@@ -2,6 +2,7 @@ package Prestabanco.Backend.controllers;
 
 
 import Prestabanco.Backend.entities.LoanRequestEntity;
+import Prestabanco.Backend.services.FileUploadService;
 import Prestabanco.Backend.services.LoanRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoanRequestController {
     @Autowired
     private LoanRequestService loanRequestService;
+    private FileUploadService fileUploadService;
 
     @PostMapping("/")
     public ResponseEntity<LoanRequestEntity> save(@RequestBody LoanRequestEntity loanRequestEntity) {
         LoanRequestEntity newLoan = loanRequestService.saveLoanRequest(loanRequestEntity);
+        
         return ResponseEntity.ok(newLoan);
     }
 

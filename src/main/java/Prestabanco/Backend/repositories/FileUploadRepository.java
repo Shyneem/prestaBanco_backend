@@ -7,5 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 
 public interface FileUploadRepository extends JpaRepository<FileUploadEntity, Long> {
-    ArrayList<FileUploadEntity> findAllByRut(String rut);
 }

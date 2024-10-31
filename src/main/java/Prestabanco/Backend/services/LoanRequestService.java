@@ -10,6 +10,9 @@ public class LoanRequestService {
     @Autowired
     LoanRequestRepository loanRequestRepository;
 
+    public LoanRequestEntity getLoanRequestById(Long id) {
+        return loanRequestRepository.findById(id).get();
+    }
     public LoanRequestEntity saveLoanRequest(LoanRequestEntity loanRequest){
         return loanRequestRepository.save(loanRequest);
     }

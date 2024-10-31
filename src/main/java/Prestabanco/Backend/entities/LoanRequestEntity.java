@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table(name = "loan")
+@Table(name = "loans")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,7 +17,7 @@ public class LoanRequestEntity {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    @Column(unique=true,nullable = false)
+
     private String rut;
     private int years;
     private float interestRate;
