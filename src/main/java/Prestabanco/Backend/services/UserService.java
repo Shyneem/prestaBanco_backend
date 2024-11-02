@@ -17,34 +17,34 @@ public class UserService {
 
 
 
-    public ArrayList<UserEntity> getUsers() { return (ArrayList<UserEntity>) userRepository.findAll();
-    }
-
-    /*
-    public UserResponse authenticate(LoginRequest loginRequest) {
-        UserResponse userResponse = new UserResponse();
-        if (loginRequest.getRut().equals(user.getRut()) && loginRequest.getPassword().equals(user.getPassword())) {
-            userResponse.setId(user.getId());
-            userResponse.setRut(loginRequest.getRut());
-
+    public ArrayList<UserEntity> getUsers() {
+        ArrayList<UserEntity> users = (ArrayList<UserEntity>) userRepository.findAll();
+        if (users == null) {
+            users = new ArrayList<>();
+            return users;
         }
-        return userResponse;
+        return users;
     }
-
-     */
 
     public UserEntity saveUser(UserEntity user){
-        return userRepository.save(user);
+        if ( user != null && user.getRut() != "" &&  userRepository.findByRut(user.getRut()) == null && !(userRepository.existsById(user.getId())) && user.getRut() != null) {
+            return userRepository.save(user);
+        }
+        throw new IllegalArgumentException("Error de campos nulos");
     }
 
     public UserEntity getUserById(Long id){
+        if (id == null) {
+            throw new IllegalArgumentException("Error de campos nulos");
+        }
         return userRepository.findById(id).get();
     }
 
-    public UserEntity getUserByRut(String rut) { return userRepository.findByRut(rut);
-    }
 
     public UserEntity updateUser(UserEntity user) {
+        if (user == null || user.getId() == null) {
+            throw new IllegalArgumentException("Error de campos nulos");
+        }
         return userRepository.save(user);
     }
 

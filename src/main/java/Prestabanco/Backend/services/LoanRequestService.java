@@ -11,10 +11,17 @@ public class LoanRequestService {
     LoanRequestRepository loanRequestRepository;
 
     public LoanRequestEntity getLoanRequestById(Long id) {
-        return loanRequestRepository.findById(id).get();
+        if (id == null || id <= 0){
+            throw new IllegalArgumentException("Id nulo o invalido");
+        }else {
+            return loanRequestRepository.findById(id).get();
+        }
     }
     public LoanRequestEntity saveLoanRequest(LoanRequestEntity loanRequest){
-        return loanRequestRepository.save(loanRequest);
+        if (loanRequest != null && loanRequest.getId() != null && loanRequest.getAmount() > 0
+          && loanRequest.getYears() > 0 && loanRequest.getInterestRate() > 0 && loanRequest.getRut() != ""){
+            return loanRequestRepository.save(loanRequest);}
+        throw new IllegalArgumentException("Error de campos vacios");
     }
 
 }

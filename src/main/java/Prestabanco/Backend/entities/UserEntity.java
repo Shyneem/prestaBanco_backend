@@ -25,7 +25,7 @@ public class UserEntity {
     private String name;
     private String lastname;
     private String password;
-    private int type;
+
 
 
 }

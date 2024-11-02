@@ -26,11 +26,6 @@ public class HLSimulationController {
     }
 
 
-    @GetMapping("/{id}")
-    public ResponseEntity<HLSimulationEntity> getHLSimulationById(@PathVariable Long id) {
-        HLSimulationEntity hlSimulation = hLSimulationService.getHLSimulationById(id);
-        return ResponseEntity.ok(hlSimulation);
-    }
 
     @PostMapping("/monthly-payment")
     public ResponseEntity<HLSimulationEntity> saveHLSimulation(@RequestBody HLSimulationEntity hlSimulation) {

@@ -17,9 +17,15 @@ public class FileUploadService {
 
 
     public FileUploadEntity saveFileUpload(FileUploadEntity file){
+        if(file == null){
+            throw new NullPointerException("File cannot be null");
+        }
         return fileUploadRepository.save(file);}
 
     public FileUploadEntity updateUser(FileUploadEntity file) {
+        if (file == null){
+            throw new NullPointerException("File cannot be null");
+        }
         return fileUploadRepository.save(file);
     }
 
