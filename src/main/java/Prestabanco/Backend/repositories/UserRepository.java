@@ -13,6 +13,5 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
     public UserEntity findByRut(String rut);
-    public UserEntity findByType(int type);
 
 }

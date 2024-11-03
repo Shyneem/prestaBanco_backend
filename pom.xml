@@ -93,6 +93,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>prestabanco-backend</finalName>
 	</build>
 
 </project>
