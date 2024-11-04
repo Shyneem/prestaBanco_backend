@@ -27,10 +27,11 @@ public class UserService {
     }
 
     public UserEntity saveUser(UserEntity user){
-        if ( user != null && user.getRut() != "" &&  userRepository.findByRut(user.getRut()) == null && !(userRepository.existsById(user.getId())) && user.getRut() != null) {
+        if (user.getRut() == null || user.getRut().equals("")) {
+            throw new IllegalArgumentException("Ruto nulo");
+        }else{
             return userRepository.save(user);
         }
-        throw new IllegalArgumentException("Error de campos nulos");
     }
 
     public UserEntity getUserById(Long id){

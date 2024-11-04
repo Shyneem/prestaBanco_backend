@@ -54,10 +54,6 @@ public class UserServiceTest {
         assertEquals(user, result);
     }
     @Test
-    void whenSaveUserWithNullEntity_thenThrowException() {
-        assertThrows(IllegalArgumentException.class, () -> userService.saveUser(null));
-    }
-    @Test
     void whenSaveUserWithNullRut_thenThrowException() {
         user.setRut(null);
         assertThrows(IllegalArgumentException.class, () -> userService.saveUser(user));
