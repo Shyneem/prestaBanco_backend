@@ -27,7 +27,7 @@ pipeline {
         stage('Push image to Docker Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'shyneem', variable: 'docker-credentials|')]) {
+                   withCredentials([string(credentialsId: 'docker-credentials', variable: 'docker-credentials|')]) {
                         bat 'docker login -u shyneem -p %docker-credentials%'
                    }
                    bat 'docker push shyneem/prestabanco_backend:latest'
