@@ -13,7 +13,7 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-                bat 'mvn test -Dspring.profiles.active=test' // Forzamos el uso del perfil de pruebas
+                bat 'mvn test -Dspring.profiles.active=test -e -X'
             }
         }
 
