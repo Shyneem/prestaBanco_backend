@@ -21,7 +21,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    bat 'docker build -t shyneem/prestaBanco_backend:latest .'
+                    bat 'docker build -t shyneem/prestabanco_backend:latest .'
                 }
             }
         }
@@ -29,9 +29,9 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'shyneem', variable: 'docker-credentials|')]) {
-                        bat 'docker login -u mtisw -p %docker-credentials%'
+                        bat 'docker login -u shyneem -p %docker-credentials%'
                    }
-                   bat 'docker push shyneem/prestaBanco_backend:latest'
+                   bat 'docker push shyneem/prestabanco_backend:latest'
                 }
             }
         }
