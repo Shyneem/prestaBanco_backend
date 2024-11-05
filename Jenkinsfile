@@ -28,12 +28,12 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        // Utiliza --password-stdin para evitar la advertencia de seguridad
                         bat "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
                     }
                     bat 'docker push shyneem/prestabanco_backend:latest'
                 }
             }
         }
+
     }
 }
