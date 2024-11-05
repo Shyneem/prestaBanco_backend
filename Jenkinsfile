@@ -24,15 +24,15 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Docker Hub') {
-            steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        bat 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
+        stage('Push image to Docker Hub'){
+                    steps{
+                        script{
+                           withCredentials([string(credentialsId: 'docker-credentials', variable: 'dhpsw')]) {
+                                bat 'docker login -u shyneem -p %dhpsw%'
+                           }
+                           bat 'docker push shyneem/book_service:latest'
+                        }
                     }
-                    bat 'docker push shyneem/prestabanco_backend:latest'
-                }
-            }
         }
 
     }
