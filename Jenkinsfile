@@ -27,10 +27,10 @@ pipeline {
         stage('Push image to Docker Hub') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
-                        bat "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
+                    withDockerRegistry(credentialsId: 'docker-credentials') {
+                        bat 'docker push shyneem/prestabanco_backend:latest'
                     }
-                    bat 'docker push shyneem/prestabanco_backend:latest'
+
                 }
             }
         }
