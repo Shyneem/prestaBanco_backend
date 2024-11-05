@@ -30,7 +30,7 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                         bat "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
                     }
-                    bat 'docker push shyneem/book_service:latest'
+                    bat 'docker push shyneem/prestabanco_backend:latest'
                 }
             }
         }
