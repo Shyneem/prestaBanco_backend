@@ -27,8 +27,7 @@ public class UserService {
     }
 
     public UserEntity saveUser(UserEntity user){
-        if (user.getRut() != null && !user.getRut().equals("") &&
-        !userRepository.existsById(user.getId())) {
+        if (user.getRut() != null && !user.getRut().equals("") ) {
             return userRepository.save(user);
 
         }else{
