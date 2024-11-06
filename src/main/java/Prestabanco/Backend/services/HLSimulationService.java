@@ -52,7 +52,7 @@ public class HLSimulationService {
     }
 
     public HLSimulationEntity saveHLSimulation(HLSimulationEntity hLSimulation){
-        if(hLSimulation != null && hLSimulation.getId() != null && hLSimulation.getRut() != null
+        if(hLSimulation != null  && hLSimulation.getRut() != null
            && !hLSimulation.getRut().isEmpty() && hLSimulation.getLoanAmount() >= 0
             && hLSimulation.getYears() >=0 ){
             hLSimulationRepository.save(hLSimulation);
